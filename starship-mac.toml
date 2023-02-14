@@ -1,0 +1,78 @@
+format = """
+ \
+$all\
+$character"""
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "197"
+read_only = "  "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+
+[character]
+success_symbol = "[❯](bright-black)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+symbol = " "
+format = "$symbol[$branch]($style)"
+style = "white"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style) "
+style = "cyan"
+up_to_date = ""
+conflicted = "​"
+untracked = ""
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = ""
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+symbol = " $version"
+python_binary = "python3"
+format = "[$symbol$virtualenv]($style) "
+
+[nodejs]
+disabled = true
+
+[jobs]
+symbol="[ $number]($style)"
+style="bold orange"
+symbol_threshold = 1
+number_threshold = 2
+
+[docker_context]
+format = "[ $context](bold blue) "
+
+[php]
+format = "[ $version]($style) "
+
+[custom.cpp]
+format = "[ﭱ ]($style) "
+detect_extensions = ["cpp", "hpp", "h"]
+style = "bold blue"
+
+[custom.laravel]
+command="php artisan -V"
+format = " [ Laravel]($style) "
+detect_files = ["artisan"]
+style = "bold red"
+
+[cmake]
+format = "[△ $version]($style) "
+style = "bold green"
+
